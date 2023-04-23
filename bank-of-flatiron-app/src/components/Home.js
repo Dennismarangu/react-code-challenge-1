@@ -47,7 +47,50 @@ function Home() {
       );
      setTransactions(updatedTransactions);
  };
-
+ return (
+   <div>
+     <h1>Recent Transactions</h1>
+     <form onSubmit={handleSubmit}>
+       <label htmlFor="description">Description:</label>
+       <input type="text" id="description" required />
+       <label htmlFor="amount">Amount:</label>
+       <input type="number" id="amount" required />
+       <label htmlFor="category">Category:</label>
+       <input type="text" id="category" required />
+       <button type="submit">Add Transaction</button>
+     </form>
+     <input
+       type="text"
+       placeholder="Search transactions"
+       value={searchTerm}
+       onChange={(event) => setSearchTerm(event.target.value)}
+     />
+     <table>
+       <thead>
+         <tr>
+           <th onClick={() => setSortColumn("description")}>Description</th>
+           <th onClick={() => setSortColumn("category")}>Category</th>
+           <th onClick={() => setSortColumn("amount")}>Amount</th>
+           <th>Delete</th>
+         </tr>
+       </thead>
+       <tbody>
+         {sortedTransactions.map((transaction) => (
+           <tr key={transaction.id}>
+             <td>{transaction.description}</td>
+             <td>{transaction.category}</td>
+             <td>{transaction.amount.toFixed(2)}</td>
+             <td>
+               <button onClick={() => handleDelete(transaction.id)}>
+                 Delete
+               </button>
+             </td>
+           </tr>
+         ))}
+       </tbody>
+     </table>
+   </div>
+ );
 
 }
 
