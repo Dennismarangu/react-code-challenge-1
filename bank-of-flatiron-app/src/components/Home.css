@@ -65,4 +65,17 @@
         text-align: center;
       }
 
+      td:last-child button {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+      
+      td:last-child button:hover {
+        background-color: #c82333;
+      }
       
