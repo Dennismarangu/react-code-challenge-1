@@ -23,6 +23,32 @@ function Home() {
      setTransactions([...transactions, newTransaction]);
      event.target.reset();
    };
+
+    // Define function to filter transactions by search term
+    const filteredTransactions = transactions.filter((transaction) =>
+    transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+    // Define function to sort transactions by column
+     const sortedTransactions = filteredTransactions.sort((a, b) => {
+       if (a[sortColumn] < b[sortColumn]) {
+      return -1;
+    }
+       if (a[sortColumn] > b[sortColumn]) {
+      return 1;
+    }
+       return 0;
+  });
+
+       // Define function to delete a transaction
+      const handleDelete = (id) => {
+      const updatedTransactions = transactions.filter(
+        (transaction) => transaction.id !== id
+      );
+     setTransactions(updatedTransactions);
+ };
+
+
 }
 
 export default Home;
