@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
 
 function Home() {
@@ -6,7 +6,7 @@ function Home() {
    const [transactions, setTransactions] = useState([
      { id: 1, description: "Coffee", amount: -3.5, category: "Food" },
      { id: 2, description: "Salary", amount: 2000, category: "Income" },
-     { id: 3, description: "Rent", amount: -800, category: "Housing" },
+     { id: 3, description: "Paycheck from Bob's Burgers", amount: -800, category: "Income" },
    ]);
    const [searchTerm, setSearchTerm] = useState("");
    const [sortColumn, setSortColumn] = useState("");
@@ -92,6 +92,6 @@ function Home() {
    </div>
  );
 
-}
+};
 
 export default Home;
