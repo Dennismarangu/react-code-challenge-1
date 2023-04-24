@@ -13,6 +13,9 @@ When the application is running, you will be presented with a form that allows y
 
 You can also filter the transactions by their description using the input field labeled "Filter by Description".
 
+Delete transactions by clicking the "Delete" button next to the transaction.
+
+
 ### Technologies Used
 This project was built with the following technologies:
 
