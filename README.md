@@ -1,28 +1,24 @@
-# Transactions App
+# Transaction Table
+This project is a simple web application that allows users to add and filter transactions.
 
-This is a simple React application that allows you to add, search, sort and delete transactions.
+### Getting Started
+To run this application, follow these steps:
 
-## Getting Started
-To get started with the project, clone the repository and run npm install to install the required dependencies.
+### Clone this repository to your local machine
+Install the necessary dependencies by running npm install
+Start the development server by running npm start
 
-## Transactions App
-This is a simple React application that allows you to add, search, sort and delete transactions.
+### Usage
+When the application is running, you will be presented with a form that allows you to add transactions. Simply fill out the fields and click the "Add Transaction" button.
 
-## Usage
-To start the development server, run npm start.
+You can also filter the transactions by their description using the input field labeled "Filter by Description".
 
-bash
-"npm run start"
-This will start the server and open the app in your browser.
+### Technologies Used
+This project was built with the following technologies:
 
-## Features
-*Add new transactions by filling out the form at the top of the page and clicking the "Add Transaction" button.
-*Search for existing transactions by typing in the search bar.
-*Sort transactions by clicking on the column header.
-*Delete transactions by clicking the "Delete" button next to the transaction.
-
-## Technologies Used
-This application is built using React.js, a popular JavaScript library for building user interfaces. It also uses useState hook to handle the state of the transactions and search term, and useEffect hook to fetch data from a local database file.
+React
+JavaScript
+CSS
 
 ## Future Improvements
 Here are some potential improvements that could be made to this application:
