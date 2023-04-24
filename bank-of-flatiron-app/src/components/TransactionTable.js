@@ -34,6 +34,10 @@ function TransactionTable() {
     setFilter(event.target.value);
   };
 
+  const handleDelete = id => {
+    setTransactions(transactions.filter(transaction => transaction.id !== id));
+  };
+
   const filteredTransactions = transactions.filter(transaction => transaction.description.toLowerCase().includes(filter.toLowerCase()));
 
   return (
@@ -78,6 +82,7 @@ function TransactionTable() {
               <td>{transaction.description}</td>
               <td>{transaction.category}</td>
               <td>{transaction.amount}</td>
+              <td><button onClick={() => handleDelete(transaction.id)}>Delete</button></td>
             </tr>
           ))}
         </tbody>
