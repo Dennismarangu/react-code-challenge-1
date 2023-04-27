@@ -6,22 +6,17 @@ function TransactionTable() {
   const [newTransaction, setNewTransaction] = useState({ date: '', description: '', category: '', amount: '' });
   const [filter, setFilter] = useState('');
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch('/db.json');
-        const data = await response.json();
-        setTransactions(data.transactions);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    fetchData();
-  }, []);
+  useEffect(()=>{
+    fetch (`http://localhost:3000/transactions`)
+    .then ((res)=>res.json())
+    .then ((transactions)=>setTransactions(transactions));
+    console.log(transactions);
+  },[])
+
 
   const handleSubmit = event => {
     event.preventDefault();
-    setTransactions(transactions => [...transactions, newTransaction]);
+    setTransactions(transactions => [...transactions, {id: transactions.length + 1, ...newTransaction}]);
     setNewTransaction({ date: '', description: '', category: '', amount: '' });
   };
 
@@ -33,7 +28,7 @@ function TransactionTable() {
   const handleFilterChange = event => {
     setFilter(event.target.value);
   };
-
+  
   const handleDelete = id => {
     setTransactions(transactions.filter(transaction => transaction.id !== id));
   };
@@ -76,7 +71,7 @@ function TransactionTable() {
           </tr>
         </thead>
         <tbody>
-          {filteredTransactions.map(transaction => (
+          {filteredTransactions.map((transaction) => (
             <tr key={transaction.id}>
               <td>{transaction.date}</td>
               <td>{transaction.description}</td>

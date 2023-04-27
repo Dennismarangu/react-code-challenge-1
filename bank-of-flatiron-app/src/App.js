@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
 import TransactionTable from './components/TransactionTable';
 import About from './components/About';
 
+
 function App() {
+
+
+  
+
   return (
     <div>
      <NavBar />
